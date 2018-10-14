@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>发票管理</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../plugins/jeasyui/themes/metro/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="../plugins/jeasyui/themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script type="text/javascript" src="../plugins/jeasyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../plugins/jeasyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../plugins/jeasyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+    <div id="dgToolbar" style="padding:5px;">
+        <div class="fl">
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="invoices.onDel()">删除</a>
+        </div>
+        <div class="fr">
+            <input id="txtKeyword" class="easyui-textbox" data-options="buttonText:'查询',buttonAlign:'right',buttonIcon:'icon-search',prompt:'请输入关键字',onClickButton:invoices.onSearch" style="width:300px;height:32px;">
+        </div>
+        <span class="clr"></span>
+    </div>
+    <table id="dgInvoice" class="easyui-datagrid mgt10" data-options="fit:true,fitColumns:true,checkbox:true,singleSelect:true,pagination:true,toolbar:'#dgToolbar'" style="margin-top:20px;">
+        <thead>
+            <tr>
+                <th data-options="field:'Id',checkbox:true"></th>
+                <th data-options="field:'Name',width:100">发票名称</th>
+                <th data-options="field:'Amount',width:100">发票额</th>
+                <th data-options="field:'InvoiceCode',width:100">发票代码</th>
+                <th data-options="field:'InvoiceNumber',width:100">发票号码</th>
+                <th data-options="field:'InvoiceDate',width:100">开票日期</th>
+                <th data-options="field:'InvoiceCheckCode',width:100">开票校验码</th>
+                <th data-options="field:'TaxpayerCode',width:100">纳税人识别号</th>
+                <th data-options="field:'InvoiceCompany',width:100">开票公司</th>
+                <th data-options="field:'InvoicePurpose',width:100">发票用途</th>
+                <th data-options="field:'InvoiceSource',width:100">发票来源</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script src="../js/managers/invoices.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            invoices.init();
+        })
+    </script>
+</body>
+</html>

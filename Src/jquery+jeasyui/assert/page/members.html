@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>成员管理</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../plugins/jeasyui/themes/metro/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="../plugins/jeasyui/themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script type="text/javascript" src="../plugins/jeasyui/jquery.min.js"></script>
+    <script type="text/javascript" src="../plugins/jeasyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../plugins/jeasyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+    <div id="dgToolbar" style="padding:5px;">
+        <div class="fl">
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="complaintsuggestion.onDel()">删除</a>
+        </div>
+        <div class="fr">
+            <input id="txtKeyword" class="easyui-textbox" data-options="buttonText:'查询',buttonAlign:'right',buttonIcon:'icon-search',prompt:'请输入关键字',onClickButton:members.onSearch" style="width:300px;height:32px;">
+        </div>
+        <span class="clr"></span>
+    </div>
+    <table id="dgMember" class="easyui-datagrid mgt10" data-options="fit:true,fitColumns:true,checkbox:true,singleSelect:true,pagination:true,toolbar:'#dgToolbar'" style="margin-top:20px;">
+        <thead>
+            <tr>
+                <th data-options="field:'Id',checkbox:true"></th>
+                <th data-options="field:'MobilePhone',width:100">手机号</th>
+                <th data-options="field:'Email',width:100">电子邮箱</th>
+                <th data-options="field:'NickName',width:100">昵称</th>
+                <th data-options="field:'RecordDate',width:100">创建日期</th>
+                <th data-options="field:'LastUpdatedDate',width:100">最后活动时间</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script src="../js/managers/members.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            members.init();
+        })
+    </script>
+</body>
+</html>
